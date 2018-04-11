@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+<h1>About the strike!</h1>
+<p>
+    <ul>
+        <li>Rumour says there are sellouts.</li>
+        <li>Rumour says there will be expulsions</li>
+        <li>Rumour says RIOT police came on Monday</li>
+        <li>Rumour says there is so much fake news out there, don't believe everything you read here.</li>
+    </ul>
+    </p>
+<div class="actionBox">
+    <form class="form-inline" role="form" action="{{ url_for('topics')}}" method="POST">
+        {{ commentForm.hidden_tag() }}<br>
+        <p>
+           {{ commentForm.comment.label }}<br>
+           {{ commentForm.comment(cols=50, rows=7) }}<br>
+           {% for error in commentForm.comment.errors %}
+           <span style="color: red;">[{{ error }}]
+           </span>
+           {% endfor %}
+        </p>
+        <div class="col-lg-2"></div>
+        <p> {{ commentForm.submit() }}</p>
+        </form>
+        {% for comment in comments %}
+        <p>
+            <ul>
+                <li>
+                    {{ comment.author.id }} says <b>{{ comment.comment }}</b>
+                </li>
+            </ul>
+        </p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

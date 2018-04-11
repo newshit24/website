@@ -1,19 +1,18 @@
-from flask import Flask, render_template
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from config import Config
+from flask_login import LoginManager
 
 app=Flask(__name__)
+db=SQLAlchemy(app)
+app.config.from_object(Config)
+login=LoginManager(app)
+login.login_view='login'
 
-@app.route('/')
-def home():
-	return render_template('index.html')
+#migrate=Migrate(app, db)
 
-@app.route('/contact')
-def contact():
-	return render_template('contact.html')
 
-@app.route('/about')
-def about():
-	return render_template('about.html')
-
+from views import *
 
 if __name__=='__main__':
-	app.run(debug=True)
+	app.run(port=80)

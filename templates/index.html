@@ -1,54 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>HITNews24</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="{{url_for('static', filename = 'startbootstrap-clean-blog-gh-pages/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="{{url_for('static', filename ='startbootstrap-clean-blog-gh-pages/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-    <!-- Custom styles for this template -->
-    <link href="{{url_for('static', filename= 'startbootstrap-clean-blog-gh-pages/css/clean-blog.min.css')}}" rel="stylesheet">
-
-  </head>
-
-  <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand" href="#">HITNews24</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('home') }}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('about') }}">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+{% block content %}
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('static/startbootstrap-clean-blog-gh-pages/img/hit-home-1.jpg')">
       <div class="overlay"></div>
@@ -56,8 +8,8 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>Harare Institute of Technology</h1>
-              <span class="subheading">A Platform for all the trending news at Harare Institute of Technology</span>
+              <h1>News 24</h1>
+              <span class="subheading">Trending news around you!</span>
             </div>
           </div>
         </div>
@@ -70,7 +22,6 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-preview">
-            <a href="post.html">
               <h2 class="post-title">
                 Students protest for the first time ever over a number of issues
               </h2>
@@ -78,104 +29,67 @@
                 First strike at HIT
               </h3>
             </a>
-            <!--<p class="post-meta">Posted by
-              <a href="#">Start Bootstrap</a>
-              on September 24, 2018</p>-->
-          </div>
-          <hr>
-          <!--<div class="post-preview">
-            <a href="post.html">
-              <h2 class="post-title">
-                I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
-              </h2>
-            </a>
-            <p class="post-meta">Posted by
-              <a href="#">Start Bootstrap</a>
-              on September 18, 2018</p>
+            <p class="post-meta">A trending whatsapp message from unknown</p>
+
+              <p class="post-meta">Ahoy maCdes!!!<br>
+
+MaCdes, VC achiri kufunga kuti tiri kutamba. He's ultimately responsible for all the issues we are demonstrating over, so why won't he come out kuti ataure nesu?<br>
+
+Yes, tiri kuendesa maIssues in writing, but izvozvo ndezve madilebarations avo for the solution yatiri kuda.<br>
+Demo irikupedzwa neaddress yaVC! Hatisi kuenda kumalectures, tinenge tiri paNzara na8am tomorrow, and continually afterwards, until VC owns up and addresses us!<br>
+
+Hatichada and Hatichatya!!!</p>
           </div>
           <hr>
           <div class="post-preview">
-            <a href="post.html">
+            <a href="{{ url_for('misshit')}}">
               <h2 class="post-title">
-                Science has not yet mastered prophecy
+                Finding Miss HIT
               </h2>
-              <h3 class="post-subtitle">
-                We predict too much for the next year and yet far too little for the next ten.
-              </h3>
             </a>
             <p class="post-meta">Posted by
-              <a href="#">Start Bootstrap</a>
-              on August 24, 2018</p>
+              userX
+              </p>
           </div>
           <hr>
           <div class="post-preview">
-            <a href="post.html">
+            <a href="https://twitter.com/twitter/statuses/983426714972884994">
               <h2 class="post-title">
-                Failure is not an option
+                SRC President video
               </h2>
               <h3 class="post-subtitle">
-                Many say exploration is part of our destiny, but it’s actually our duty to future generations.
+               Reasons
               </h3>
             </a>
-            <p class="post-meta">Posted by
-              <a href="#">Start Bootstrap</a>
-              on July 8, 2018</p>
+            <p class="post-meta">
+              <a href="https://twitter.com/twitter/statuses/983426714972884994">Watch on twitter as SRC president lists reasons for protests</a></p>
           </div>
           <hr>
-          <!-- Pager -->
-          <!--<div class="clearfix">
-            <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+          <div class="post-preview">
+            <a href="https://www.zimeye.net/2018/04/09/harare-institute-of-technology-students-strike/">
+              <h2 class="post-title">
+                ZimEye coverage
+              </h2>
+              <h3 class="post-subtitle">
+                IN PICTURES: Harare Institute Of Technology Students Strike
+              </h3>
+            </a>
+            <p class="post-meta">
+              <a href="https://www.zimeye.net/2018/04/09/harare-institute-of-technology-students-strike/">Click to watch</p>
           </div>
-        </div>
-      </div>
-    </div>
+          <hr>
 
-    <hr>-->
+          <p><a href="mailto:newshit24hr@gmail.com">Share your story with us by email</a></p>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <ul class="list-inline text-center">
-              <li class="list-inline-item">
-                <a href="#">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-            </ul>
-            <p class="copyright text-muted">All Rights Reserved &copy; HITNews 2018</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+          <p><a href="https://drive.google.com/open?id=1rVRaZKd4AK7YXD502lCnKWDuR6iFa25e">Download videos and pictures</a></p>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="{{url_for('static', filename = 'startbootstrap-clean-blog-gh-pages/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{url_for('static', filename = 'startbootstrap-clean-blog-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+          <p><a href="mailto:newshit24hr@gmail.com">We need developers and writers</a></p>
 
-    <!-- Custom scripts for this template -->
-    <script src="{{url_for('static', filename = 'startbootstrap-clean-blog-gh-pages/jsjs/clean-blog.min.js')}}"></script>
+          <hr>
 
-  </body>
+    
 
-</html>
+    {% endblock %}
+
+    
+
