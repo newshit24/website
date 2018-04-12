@@ -29,7 +29,8 @@ def about():
 @login_required
 @app.route('/topics', methods=['POST', 'GET'])
 def topics():
-	
+	if current_user.is_authenticated:
+		return redirect(url_for('topics', current_user=current_user))
 	form=CommentForm()
 	if form.validate_on_submit():
 		comment=Comment(comment=form.comment.data, author=current_user)
@@ -60,10 +61,14 @@ def login():
 		return redirect(url_for('topics'))
 	if form.validate_on_submit():
 		user=User.query.filter_by(id=form.username.data).first()
-		if user is None or not user.check_password(form.password.data):
-			flash('Invalid username or password')
-			return render_template('login.html', form=form)
-		login_user(user, remember=form.remember_me.data)
+		if user:
+			if user.check_password(form.password.data):
+				login_user(user, remember=form.remember_me.data)
+				return redirect(url_for('topics'))
+		flash('Invalid username or password')
+		
+	return render_template('login.html', form=form)
+		
 		#return url_for('topics')	
 	return render_template('login.html', form=form)
 
